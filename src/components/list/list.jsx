@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./list.css";
+import { Task } from "../task/task";
 
 export default function List() {
   const [task, setTask] = useState("");
@@ -29,9 +30,13 @@ export default function List() {
         onKeyDown={handleKeyDown}
       />
       <button onClick={addTask}>Add</button>
-      {tasks.map((task) => (
-        <li key={task.id}>{task.summary}</li>
-      ))}
+      <ul>
+        {tasks.map((task) => (
+          <li key={task.key}>
+            <Task {...task} />
+          </li>
+        ))}
+      </ul>
     </>
   );
 }
