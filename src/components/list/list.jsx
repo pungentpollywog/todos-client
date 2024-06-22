@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./list.css";
 
 export default function List() {
   const [task, setTask] = useState("");
