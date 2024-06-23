@@ -13,6 +13,10 @@ export default function List() {
     }
   }
 
+  function removeTask(id) {
+    setTasks((tasks) => tasks.filter((task) => task.id !== id));
+  }
+
   function handleKeyDown(ev) {
     if (ev.key === "Enter") {
       addTask();
@@ -33,7 +37,7 @@ export default function List() {
       <ul>
         {tasks.map((task) => (
           <li key={task.key}>
-            <Task {...task} />
+            <Task task={task} removeTask={removeTask} />
           </li>
         ))}
       </ul>
