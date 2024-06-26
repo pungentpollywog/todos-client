@@ -1,3 +1,11 @@
+.list {
+  max-width: 30rem;
+  min-width: 15rem;
+  background-color: var(--base2);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
 button {
   margin: 1rem;
 }

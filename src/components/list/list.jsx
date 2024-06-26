@@ -38,7 +38,7 @@ export default function List() {
   }
 
   return (
-    <>
+    <div className="list">
       <h2>My List</h2>
       <input
         type="text"
@@ -59,6 +59,6 @@ export default function List() {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }

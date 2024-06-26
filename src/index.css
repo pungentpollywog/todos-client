@@ -25,22 +25,24 @@
   --primary: #2f0c00;
 
   /* Neumorphism styles: https://codepen.io/Mika_Chu/pen/abOZjeJ */
-  --input-shadow: 2px 2px var(--shadow-size) var(--base3), -2px -2px var(--shadow-size) var(--base1);
+  --input-shadow: 2px 2px var(--shadow-size) var(--base3),
+    -2px -2px var(--shadow-size) var(--base1);
 
-  --input-shadow-active: inset 2px 2px 6px var(--base3), inset -2px -2px 6px var(--base1), 1px 1px 6px var(--base3),
+  --input-shadow-active: inset 2px 2px 6px var(--base3),
+    inset -2px -2px 6px var(--base1), 1px 1px 6px var(--base3),
     -1px -1px 6px var(--base1);
 
   --shadow-transition: all 0.25s cubic-bezier(0.17, 0.67, 0.83, 0.67);
 
-  --base-shadow: inset 0px 0px 0px var(--base3), inset 0px 0px 0px var(--base1), 4px 4px 9px var(--base3),
-    -4px -4px 9px var(--base1);
+  --base-shadow: inset 0px 0px 0px var(--base3), inset 0px 0px 0px var(--base1),
+    4px 4px 9px var(--base3), -4px -4px 9px var(--base1);
 
-  --base-shadow-active: inset 4px 4px 9px var(--base3), inset -4px -4px 6px var(--base1), 2px 2px 9px var(--base3),
+  --base-shadow-active: inset 4px 4px 9px var(--base3),
+    inset -4px -4px 6px var(--base1), 2px 2px 9px var(--base3),
     -2px -2px 9px var(--base1);
 }
 
 body {
-  background-color: var(--base2);
   margin: 0;
   padding: 1rem;
   color: var(--baseDark2);

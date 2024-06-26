@@ -23,7 +23,7 @@ export function TaskEditor({ task, editTask }) {
   }
 
   return (
-    <div>
+    <div className="task">
       <input value={text} onChange={updateText} onKeyDown={saveTaskOnEnter} />
       <button onClick={saveTask}>save</button>
       <button onClick={cancel}>cancel</button>

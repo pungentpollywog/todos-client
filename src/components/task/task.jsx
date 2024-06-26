@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 export function Task({ task, makeEdits, removeTask }) {
   return (
-    <div>
+    <div className="task">
       {task.summary}
       <button onClick={makeEdits}>edit</button>
       <button className="del" onClick={() => removeTask(task.id)}>
