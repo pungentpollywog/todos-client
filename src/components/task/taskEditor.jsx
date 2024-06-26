@@ -16,9 +16,15 @@ export function TaskEditor({ task, editTask }) {
     setText(ev.target.value);
   }
 
+  function saveTaskOnEnter(ev) {
+    if (ev.key === 'Enter') {
+      saveTask();
+    }
+  }
+
   return (
     <div>
-      <input value={text} onChange={updateText} />
+      <input value={text} onChange={updateText} onKeyDown={saveTaskOnEnter} />
       <button onClick={saveTask}>save</button>
       <button onClick={cancel}>cancel</button>
     </div>
