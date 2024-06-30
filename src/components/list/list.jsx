@@ -2,14 +2,15 @@ import { useState } from "react";
 import "./list.css";
 import { Task } from "../task/task";
 import { TaskEditor } from "../task/taskEditor";
+import PropTypes from "prop-types";
 
-export default function List() {
-  const [task, setTask] = useState("");
-  const [tasks, setTasks] = useState([]);
+export default function List({ name, items, deleteList }) {
+  const [taskText, setTask] = useState("");
+  const [tasks, setTasks] = useState(items);
 
   function addTask() {
-    if (task.length > 0) {
-      setTasks((tasks) => [...tasks, { summary: task, id: crypto.randomUUID(), editing: false }]);
+    if (taskText.length > 0) {
+      setTasks((tasks) => [...tasks, { summary: taskText, id: crypto.randomUUID(), editing: false }]);
       setTask("");
     }
   }
@@ -39,11 +40,11 @@ export default function List() {
 
   return (
     <div className="list">
-      <h2>My List</h2>
+      <h2>{name}</h2>
       <input
         type="text"
-        placeholder="task"
-        value={task}
+        placeholder={tasks.length ? "and den?" : "item or task"}
+        value={taskText}
         onChange={(ev) => setTask(ev.target.value)}
         onKeyDown={handleKeyDown}
       />
@@ -59,6 +60,13 @@ export default function List() {
           </li>
         ))}
       </ul>
+      <button onClick={deleteList}>Delete</button>
     </div>
   );
 }
+
+List.propTypes = {
+  name: PropTypes.string.isRequired,
+  items: PropTypes.array.isRequired,
+  deleteList: PropTypes.func,
+};

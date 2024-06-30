@@ -1,10 +1,10 @@
 import "./App.css";
-import List from "./components/list/list";
+import Dash from "./components/dash/dash";
 
 function App() {
   return (
     <>
-      <List />
+      <Dash />
     </>
   );
 }
