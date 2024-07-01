@@ -7,8 +7,10 @@ export default function Dash() {
   const [lists, setLists] = useState([]);
 
   function addList() {
-    setLists((lists) => [...lists, { name: listName, tasks: [], id: crypto.randomUUID() }]);
-    setListName("");
+    if (listName.length) {
+      setLists((lists) => [...lists, { name: listName, tasks: [], id: crypto.randomUUID() }]);
+      setListName("");
+    }
   }
 
   function removeList(id) {
@@ -36,7 +38,9 @@ export default function Dash() {
           onChange={(ev) => setListName(ev.target.value)}
           onKeyDown={addListOnEnter}
         />
-        <button onClick={addList}>Create List</button>
+        <button onClick={addList} disabled={listName.length === 0}>
+          Create List
+        </button>
       </div>
     </>
   );
